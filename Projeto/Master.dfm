@@ -1,0 +1,44 @@
+object FormMaster: TFormMaster
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'FormMaster'
+  ClientHeight = 475
+  ClientWidth = 782
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  KeyPreview = True
+  OldCreateOrder = False
+  Visible = True
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlBotoes: TPanel
+    Left = 0
+    Top = 436
+    Width = 782
+    Height = 39
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object btnSair: TButton
+      AlignWithMargins = True
+      Left = 704
+      Top = 3
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+      OnClick = btnSairClick
+    end
+  end
+end

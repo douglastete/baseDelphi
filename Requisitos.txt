@@ -1,0 +1,101 @@
+Desenvolver um sistema de cadastros e vendas, conforme especificações a seguir:
+
+1 – O sistema deverá conter, as seguintes rotinas:
+
+Cadastro de Clientes
+Cadastro de Fornecedores
+Cadastro de Produtos
+Tela “Vendas” para inserir os produtos vendidos para os clientes
+Relatórios
+
+1.1 - Cadastro de Clientes
+
+Este cadastro deverá conter, os seguintes campos:
+
+Código numérico (único e gerado sequencialmente)
+Nome
+CPF
+Status (Ativo/Inativo)
+Data de Nascimento (DD/MM/YYYY)
+
+Fazer validação do CPF e não permitir mais de um cliente com mesmo CPF.
+
+1.2 - Cadastro de Fornecedores
+
+Este cadastro deverá conter, os seguintes campos:
+
+Código numérico (único e gerado sequencialmente)
+Nome fantasia
+Razão Social
+CNPJ
+Status (Ativo/Inativo)
+
+
+Fazer validação do CNPJ e não permitir mais de um fornecedor com mesmo CNPJ.
+
+
+
+1.3 – Cadastro de Produtos
+
+Este cadastro deverá conter, os seguintes campos:
+
+
+
+Código do produto (único e gerado sequencialmente)
+Descrição
+Preço unitário
+Fornecedor
+Status (Ativo/Inativo) 
+
+
+O sistema NÃO deve permitir gravar o produto com preço zerado.
+O “Fornecedor” deverá existir no “Cadastro de Fornecedores”.
+O sistema NÃO deve permitir vincular ao Produto um Fornecedor que esteja INATIVO.
+
+
+1.4 - Tela “Vendas” para inserir os produtos vendidos para os clientes
+
+Esta rotina deverá conter, os seguintes campos:
+
+
+
+Número da venda (único e gerado sequencialmente)
+Cliente - Data/Hora da Venda
+Produtos (Código/Descrição/Preço Unitário/Quantidade vendida/Valor Total)
+Valor Total da Venda - Status (Pendente/Efetivada)
+
+
+O sistema deve permitir incluir “N” produtos em uma mesma venda.
+O sistema NÃO deve permitir incluir produtos que estejam INATIVOS.
+O sistema NÃO deve permitir incluir produto repetido numa mesma venda.
+O “Cliente” deverá existir no “Cadastro de Clientes”
+O sistema NÃO deve permitir efetuar a venda para um cliente que esteja INATIVO.
+O sistema deve efetuar validações mínimas para evitar uma venda inconsistente -a inconsistente (Quantidades zeradas, Venda sem produto, Venda sem cliente). 
+ A rotina deve possuir uma forma de EFETIVAR a venda, ou seja, alterar seu status de PENDENTE para EFETIVADA. 
+O sistema NÃO deve permitir alteração ou exclusão de vendas com Status = EFETIVADA.
+
+
+1.5 – Relatórios 
+
+Esta rotina deverá conter as seguintes opções de relatórios:
+
+
+
+Clientes Este relatório deverá listar TODOS os clientes cadastrados, ativos, exibindo os campos Código, Nome e Status.
+Vendas por Cliente Este relatório deverá listar TODAS as vendas EFETIVADAS para um DETERMINADO CLIENTE, exibindo Número da Venda e Data/Hora, listando também, os respectivos produtos de cada venda. Ordenar por Data/Hora.
+
+
+2 – Critérios do teste
+
+
+
+O sistema deve ser desenvolvido com a ferramenta Delphi.
+Os dados deverão ser gravados em banco de dados SQL SERVER.
+Todos os cadastros devem possuir as funcionalidades de Inclusão, Pesquisa/Consulta, Alteração e Exclusão.
+Priorize o uso do SQL, mesmo em inserções e atualizações, pois, estamos avaliando seus conhecimentos em SQL;
+Os layouts de tela e relatórios são livres.
+É livre a modelagem do banco de dados, ou seja, as nomenclaturas das tabelas e campos ficam à critério do desenvolvedor; desde que respeitem as especificações obrigatórias citadas anteriormente.
+Dar preferência para utilização do FireDac.
+
+
+OBS.: É desejável, porém não é obrigatória, a utilização de boas práticas de programação como: Orientação a Objetos, reutilização de código, padrões de projeto (preferencialmente Abstract Factory e Factory Methods) e etc. 

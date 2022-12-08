@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C0D3B22C-9120-42B2-A399-81716D7F9E67}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Componentes\DouglasComps.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Montreal.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DouglasComps">
+        <MSBuild Projects="..\Componentes\DouglasComps.dproj"/>
+    </Target>
+    <Target Name="DouglasComps:Clean">
+        <MSBuild Projects="..\Componentes\DouglasComps.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DouglasComps:Make">
+        <MSBuild Projects="..\Componentes\DouglasComps.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Montreal">
+        <MSBuild Projects="Montreal.dproj"/>
+    </Target>
+    <Target Name="Montreal:Clean">
+        <MSBuild Projects="Montreal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Montreal:Make">
+        <MSBuild Projects="Montreal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DouglasComps;Montreal"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DouglasComps:Clean;Montreal:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DouglasComps:Make;Montreal:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
